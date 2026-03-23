@@ -1,0 +1,12 @@
+{
+  "hook_event_name": "PostToolUse",
+  "session_id": "test-session-001",
+  "cwd": "/tmp/test-project",
+  "transcript_path": "",
+  "tool_name": "Write",
+  "tool_input": {
+    "file_path": "/tmp/test-project/src/main.py",
+    "content": "def hello():\n    print('hello world')\n"
+  },
+  "tool_response": "File written successfully"
+}

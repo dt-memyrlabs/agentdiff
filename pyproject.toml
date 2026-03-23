@@ -1,0 +1,19 @@
+[project]
+name = "agentdiff"
+version = "0.1.0"
+description = "git blame for AI-generated code"
+requires-python = ">=3.12"
+dependencies = ["click>=8.1"]
+
+[project.scripts]
+agentdiff = "agentdiff.cli:cli"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/agentdiff"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
