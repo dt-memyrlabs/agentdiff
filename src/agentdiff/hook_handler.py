@@ -147,6 +147,11 @@ def handle_stop(event: dict, cwd: str, session_id: str) -> None:
 
 def main() -> None:
     try:
+        # Ensure package is importable when run as standalone script
+        _src_dir = str(Path(__file__).resolve().parent.parent)
+        if _src_dir not in sys.path:
+            sys.path.insert(0, _src_dir)
+
         raw = sys.stdin.read()
         if not raw.strip():
             sys.exit(0)

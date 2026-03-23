@@ -77,7 +77,8 @@ def _register_hooks(project_root: Path) -> None:
             settings = {}
 
     handler_path = str((Path(__file__).parent / "hook_handler.py").resolve())
-    command = f'python "{handler_path}"'
+    src_dir = str((Path(__file__).parent.parent).resolve())
+    command = f'PYTHONPATH="{src_dir}" python "{handler_path}"'
 
     hooks = settings.setdefault("hooks", {})
 
